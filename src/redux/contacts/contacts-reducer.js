@@ -5,18 +5,7 @@ import {
   deleteContact,
   addContacts,
 } from "./contacts-operations";
-import {
-  addContactRequest,
-  addContactSuccess,
-  addContactError,
-  deleteContactRequest,
-  deleteContactSuccess,
-  deleteContactError,
-  changeFilter,
-  fetchContactRequest,
-  fetchContactSuccess,
-  fetchContactError,
-} from "./contacts-actions";
+import { changeFilter } from "./contacts-actions";
 
 const itemsReducer = createReducer([], {
   [fetchContacts.fulfilled]: (_, action) => action.payload,
@@ -35,15 +24,15 @@ const filterReducer = createReducer("", {
 });
 
 const loadingReducer = createReducer(false, {
-  [addContactRequest]: () => true, //когда идет запрос - включаем лоадер
-  [addContactSuccess]: () => false, //получили запрос - отключаем
-  [addContactError]: () => false,
-  [deleteContactRequest]: () => true,
-  [deleteContactSuccess]: () => false,
-  [deleteContactError]: () => false,
-  [fetchContactRequest]: () => true,
-  [fetchContactSuccess]: () => false,
-  [fetchContactError]: () => false,
+  [addContacts.pending]: () => true,
+  [addContacts.fulfilled]: () => false,
+  [addContacts.rejected]: () => false,
+  [deleteContact.pending]: () => true,
+  [deleteContact.fulfilled]: () => false,
+  [deleteContact.rejected]: () => false,
+  [fetchContacts.pending]: () => true,
+  [fetchContacts.fulfilled]: () => false,
+  [fetchContacts.rejected]: () => false,
 });
 
 export default combineReducers({
