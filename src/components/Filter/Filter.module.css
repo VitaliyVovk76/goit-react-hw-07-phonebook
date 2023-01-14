@@ -1,13 +1,11 @@
-.filterWrapper {
-  padding: 20px;
-  max-width: 450px;
-  margin-left: auto;
+.filter {
+  padding: 10px 20px;
+}
+
+.input {
+  display: block;
+  width: 50%;
+  padding: 5px;
   margin-right: auto;
-}
-.filterLabel {
-  display: flex;
-  flex-direction: column;
-}
-.filterInput {
-  max-width: 250px;
+  margin-left: auto;
 }

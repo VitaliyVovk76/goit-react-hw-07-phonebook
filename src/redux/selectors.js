@@ -1,8 +1,8 @@
 import { createSelector } from "@reduxjs/toolkit";
 
 export const getContacts = (state) => state.contacts.items;
-
 export const getFilter = (state) => state.filter;
+export const getModal = (state) => state.modal;
 
 // export const getVisibleContacts = (state) => {
 //   const allContacts = getContacts(state);
@@ -21,5 +21,3 @@ export const getVisibleContacts = createSelector(
     );
   }
 );
-
-export const getModal = (state) => state.modal;

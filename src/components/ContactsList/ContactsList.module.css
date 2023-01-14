@@ -1,11 +1,26 @@
-.contactsWrapper {
-  display: flex;
-  flex-direction: column;
-  max-width: 450px;
+.contactList {
+  margin: 0;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
+  padding: 10px;
 }
-.contactButton {
-  width: 60px;
-  margin-left: 40px;
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.button {
+  padding: 5px;
+}
+
+.button:hover,
+.button:focus {
+  background-color: blue;
 }

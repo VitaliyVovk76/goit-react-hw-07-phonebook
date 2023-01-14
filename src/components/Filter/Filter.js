@@ -8,16 +8,13 @@ const Filter = () => {
   const value = useSelector(getFilter);
   const dispatch = useDispatch();
   return (
-    <div className={s.filterWrapper}>
-      <label className={s.filterLabel}>
-        Find contacts by name
-        <input
-          className={s.filterInput}
-          type="text"
-          value={value}
-          onChange={(e) => dispatch(changeFilter(e.target.value))}
-        />
-      </label>
+    <div className={s.filter}>
+      <input
+        className={s.input}
+        type="text"
+        value={value}
+        onChange={(e) => dispatch(changeFilter(e.target.value))}
+      />
     </div>
   );
 };

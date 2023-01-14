@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import shortid from "shortid";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteContact, fetchContacts } from "../../redux/operations";
-import { getVisibleContacts, getContacts } from "../../redux/selectors";
+import { getVisibleContacts } from "../../redux/selectors";
 import s from "./ContactsList.module.css";
+import Button from "../Button";
 
 const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
@@ -24,18 +24,18 @@ const ContactList = () => {
   return (
     <div className={s.contactsWrapper}>
       {contacts.length > 0 && (
-        <ul>
+        <ul className={s.contactList}>
           {contacts.map(({ id, name, number }) => (
-            <li key={id}>
-              <span>{name}: </span>
-              <span>{number}</span>
-              <button
-                className={s.contactButton}
+            <li className={s.item} key={id}>
+              <p>
+                {name}: {number}
+              </p>
+              <Button
+                text="Delete"
+                id="delete"
                 type="button"
                 onClick={() => onDeleteContact(id)}
-              >
-                Delete
-              </button>
+              />
             </li>
           ))}
         </ul>

@@ -1,21 +1,19 @@
-.contactForm {
+.form {
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 20px;
+  align-items: center;
+}
 
-  border: 1px solid black;
-  max-width: 450px;
-}
-.formLabel {
-  display: flex;
-  flex-direction: column;
+.label {
+  display: block;
+  width: 50%;
   margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
-.formInput {
-  max-width: 250px;
-}
-.formButton {
-  width: 100px;
+
+.input {
+  /* display: block; */
+  width: 100%;
+  padding: 5px;
 }
