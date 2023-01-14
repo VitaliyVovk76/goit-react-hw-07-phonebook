@@ -7,7 +7,7 @@ export const fetchAllContacts = () => {
   return axios.get("/contacts").then((response) => response.data);
 };
 
-export const addContact = (contact) => {
+export const addNewContact = (contact) => {
   return axios.post("/contacts", contact).then(({ data }) => data);
 };
 
