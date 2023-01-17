@@ -13,9 +13,10 @@ import { getModal } from "./redux/selectors";
 import { toggleModal } from "./redux/modalSlice";
 import s from "./App.module.css";
 
-function App() {
+const App = () => {
   const showModall = useSelector(getModal);
   const disputch = useDispatch();
+
   return (
     <Container>
       <Section>
@@ -40,6 +41,6 @@ function App() {
       {/* <ToastContainer autoClose={3000} /> */}
     </Container>
   );
-}
+};
 
 export default App;
